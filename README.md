@@ -57,7 +57,7 @@ kubectl create -f app.yaml
 - OAUTH2_PROXY_UPSTREAM with oauth `<the http url(s) of the upstream endpoint, file:// paths for static files or static://<status_code> for static response. Routing is based on the path>`
 - OAUTH2_PROXY_COOKIE_SECURE with oauth `<Default value 'True' for https, For http configuration it should be 'False'>`
 
-5. Customize the contents of the file [`ingress-route.yaml`](https://raw.githubusercontent.com/gehlotanish/oauth2-proxy/ingress-route.yaml):
+5. Customize the contents of the file [`ingress-route.yaml`](https://raw.githubusercontent.com/gehlotanish/oauth2-proxy/master/ingress-route.yml):
 
 Create TLS
 
