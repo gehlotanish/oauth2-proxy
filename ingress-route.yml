@@ -1,0 +1,42 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: echo-ingress-nginx
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
+    nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
+spec:
+  tls:
+  - hosts:
+    - oidc.example.com
+    secretName: oidc.example.com
+  rules:
+  - host: oidc.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: hello-kubernetes-first
+          servicePort: 80
+        path: /
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: oauth2-proxy
+  namespace: default
+spec:
+  tls:
+  - hosts:
+    - oidc.example.com
+    secretName: oidc.example.com
+  rules:
+  - host: oidc.example.com
+    http:
+      paths:
+      - backend:
+         serviceName: oauth2-proxy
+         servicePort: 4180
+        path: /oauth2
