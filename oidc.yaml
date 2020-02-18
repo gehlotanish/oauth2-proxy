@@ -30,6 +30,7 @@ spec:
         - --cookie-secret=xxxxxxxxxx
         - --client-id=xxxxxxxxx
         - --client-secret=xxxxxxxxx
+        - --skip-provider-button=true
         - --http-address=0.0.0.0:4180
         env:
         - name: OAUTH2_PROXY_CLIENT_ID
