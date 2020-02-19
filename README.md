@@ -1,6 +1,9 @@
-# External OAUTH Authentication
+# Kubernetes OAUTH2 Authentication
 
 A reverse proxy and static file server that provides authentication using Providers (Google, GitHub, and others) to validate accounts by email, domain or group.
+<img src="https://github.com/kubernetes/kubernetes/raw/master/logo/logo.png" width="100">
+
+----
 
 <img src="https://cloud.githubusercontent.com/assets/45028/8027702/bd040b7a-0d6a-11e5-85b9-f8d953d04f39.png">
 
@@ -8,7 +11,7 @@ A reverse proxy and static file server that provides authentication using Provid
 
 The `auth-url` and `auth-signin` annotations allow you to use an external
 authentication provider to protect your Ingress resources.
-
+----
 Sample:
 
 ```yaml
